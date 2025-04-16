@@ -105,6 +105,7 @@ function herramientas_dns() {
 
 clear
 bienvenida
+verificar_sistema
 verificar_nmap
 
 while true; do
