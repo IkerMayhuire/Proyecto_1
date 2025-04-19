@@ -72,7 +72,7 @@ function escanear_equipos() {
 function realizar_DOS() {
 y="S"
 i=1
-leer_objetivo
+read -p "Ingrese la direcciòn IP que desea atacar: " ATAQUE
 while [ $y == "S" ]
 do
         ((i=1))
@@ -103,7 +103,6 @@ function escanear_whois() {
 
 clear
 bienvenida
-verificar_sistema
 verificar_nmap
 
 while true; do
