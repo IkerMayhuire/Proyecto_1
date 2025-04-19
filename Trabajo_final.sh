@@ -102,7 +102,7 @@ verificar_nmap
 
 while true; do
   mostrar_menu
-  read -p "Seleccione una opción [0-11]: " OPCION
+  read -p "Seleccione una opción [0-5]: " OPCION
   case $OPCION in
     1) verificar_sistema ;;
     2) escanear_puertos ;;
