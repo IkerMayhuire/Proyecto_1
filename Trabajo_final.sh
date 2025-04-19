@@ -7,11 +7,6 @@ function bienvenida() {
   echo ""
 }
 
-function verificar_sistema() {
-  echo "🔍 Verificando sistema operativo..."
-  OS=$(uname -s)
-}
-
 function verificar_nmap() {
   if ! command -v nmap &> /dev/null; then
     echo "📦 Nmap no está instalado. Instalando..."
