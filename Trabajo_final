@@ -1,11 +1,9 @@
 #!/bin/bash
 
-RUTA_REPORTE=""
-
 function bienvenida() {
-  echo "=============================================="
-  echo "         🚀 BIENVENIDO A NMAP PLUS 🚀          "
-  echo "=============================================="
+  echo "************************************************"
+  echo "        🚀 BIENVENIDO AL PROYECTO_1 🚀         "
+  echo "************************************************"
   echo ""
 }
 
@@ -39,9 +37,9 @@ function verificar_nmap() {
 
 function mostrar_menu() {
   echo ""
-  echo "====================================================="
-  echo "           🚀 BIENVENIDO A NMAP PLUS 🚀             "
-  echo "====================================================="
+  echo "*****************************************************"
+  echo "          🚀 BIENVENIDO AL PROYECTO_1 🚀            "
+  echo "*****************************************************"
   echo "1. Verificar Sistema operativo"
   echo "2. Escanear Puertos"
   echo "3. Escanear equipos"
@@ -55,38 +53,38 @@ function leer_objetivo() {
   read -p "🧭 Ingrese una IP o dominio a escanear: " OBJETIVO
 }
 
-function definir_archivo() {
-  local tipo=$1
-  mkdir -p "$RUTA_REPORTE"
-  echo "$RUTA_REPORTE/${tipo}_${OBJETIVO}_$(date +%Y%m%d_%H%M%S).txt"
-}
-
 function verificar_sistema() {
   echo "🔍 Verificando sistema operativo..."
   OS=$(uname -s)
   echo "✅ Sistema detectado: $OS"
 }
-
+                        
 function escanear_puertos() {
   leer_objetivo
-  if [ -n "$RUTA_REPORTE" ]; then
-    archivo=$(definir_archivo "puertos")
-    nmap --stats-every 5s -p- "$OBJETIVO" | tee "$archivo"
-  else
-    nmap --stats-every 5s -p- "$OBJETIVO"
-  fi
+  nmap --stats-every 5s -p- "$OBJETIVO"
 }
 
 function escanear_equipos() {
   leer_objetivo
-  if [ -n "$RUTA_REPORTE" ]; then
-    archivo=$(definir_archivo "ping")
-    nmap --stats-every 5s -sn "$OBJETIVO" | tee "$archivo"
-  else
-    nmap --stats-every 5s -sn "$OBJETIVO"
-  fi
+  nmap --stats-every 5s -sn "$OBJETIVO"
 }
 
+function realizar_DOS() {
+y="S"
+i=1
+leer_objetivo
+while [ $y == "S" ]
+do
+        ((i=1))
+        while [ $i -le 5 ]
+        do
+        ping -c 10 $ATAQUE
+        ((i++))
+done
+read -p "¿Desea continuar con el ataque? S o N: " y
+done
+}
+                                  
 function escanear_whois() {
   read -p "🌍 Ingrese un dominio para consultar: " DOMAIN
   echo "📋 WHOIS:"
