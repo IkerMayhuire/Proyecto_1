@@ -37,9 +37,9 @@ function verificar_nmap() {
 
 function mostrar_menu() {
   echo ""
-  echo "*****************************************************"
-  echo "          🚀 BIENVENIDO AL PROYECTO_1 🚀            "
-  echo "*****************************************************"
+  echo "***********************************************"
+  echo "        🚀 BIENVENIDO AL PROYECTO_1 🚀        "
+  echo "***********************************************"
   echo "1. Verificar Sistema operativo"
   echo "2. Escanear Puertos"
   echo "3. Escanear equipos"
