@@ -110,7 +110,7 @@ while true; do
     3) escanear_equipos ;;
     4) realizar_DOS ;;
     5) escanear_whois ;;
-    0) echo "👋 ¡Gracias por usar Nmap Plus!"; exit 0 ;;
+    0) echo "👋 ¡Gracias por usar el Proyecto_1!"; exit 0 ;;
     *) echo "❌ Opción no válida. Intente de nuevo." ;;
   esac
   echo ""
